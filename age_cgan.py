@@ -335,7 +335,7 @@ def main():
     y = to_categorical(final_age_cat, num_classes=len(set(age_cat)))
 
     try:
-        np.load(images_path, allow_pickle=True)
+        loaded_images = np.load(images_path, allow_pickle=True)
     except:
         loaded_images = load_images(data_dir, images, (image_shape[0], image_shape[1]))
         np.save(images_path, loaded_images, allow_pickle=True)
